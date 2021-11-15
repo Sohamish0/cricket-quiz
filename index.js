@@ -42,7 +42,7 @@ const chalk = require('chalk');
 
 console.log(chalk.bold.underline.grey.bgBlueBright(`Welcome to the quiz🎆`))
 const introStr = `\nThis quiz has two levels: \n  Level-1 has 4 questions \n  Level-2 has 3 questions \n\nTo get to the level 2, you have to give two correct answers from level-1 \nAnd to win, all answers should be correct from level-2 \n${chalk.blackBright.bold('Ahhh so much things')}😁`
-console.log(chalk.bgCyanBright(introStr));
+console.log(chalk.bgGreenBright(introStr));
 console.log('|-----________-----|')
 console.log(`         |\|         `)
 
@@ -65,5 +65,9 @@ for(let i=0; i<questions.length; i++) {
 }
 if((score === 5 || score===6 || score===7)) {
   const str = `\nHurray!You have won the quiz..🎉🎉 \nYour score is ${score}`;
+  console.log(chalk.green.blackBright(str));
+}
+if((score >=0 && score<=4)) {
+  const str = `\nSorry! You didn't make it to your win 😥\nYour score is ${score}`;
   console.log(chalk.green.blackBright(str));
 }
