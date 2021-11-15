@@ -69,5 +69,5 @@ if((score === 5 || score===6 || score===7)) {
 }
 if((score >=0 && score<=4)) {
   const str = `\nSorry! You didn't make it to your win 😥\nYour score is ${score}`;
-  console.log(chalk.green.blackBright(str));
+  console.log(chalk.bgCyan.yellowBright(str));
 }
