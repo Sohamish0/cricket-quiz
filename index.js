@@ -50,6 +50,17 @@ console.log(`         |\|         `)
 let score = 0;
 const readline = require('readline-sync');
 
+function quiz() {
+  if((score === 5 || score===6 || score===7)) {
+  const str = `\nHurray!You have won the quiz..🎉🎉 \nYour score is ${score}`;
+  console.log(chalk.green.blackBright(str));
+}
+if((score >=0 && score<=4)) {
+  const str = `\nSorry! You didn't make it to your win 😥\nYour score is ${score}`;
+  console.log(chalk.bgWhite.yellowBright(str));
+}
+
+
 for(let i=0; i<questions.length; i++) {
   let queObj = questions[i] 
   let ask = readline.keyInSelect(queObj.arr, queObj.que);
@@ -58,16 +69,16 @@ for(let i=0; i<questions.length; i++) {
     score++
   }
 
-  if((score === 2 || score === 3 || score === 4) && i === 3) {
-    const str = `Wow! you made it to the level-2. You are playing superbly!`;
-    console.log(chalk.green.blackBright(str));
+  if((score >= 2 && score <= 4) && i === 3) {
+    const str = `\nWow! you made it to the level-2. You are playing superbly!`;
+    console.log(chalk.bgWhite.yellowBright(str));
   } 
+  else if(score>=0 && score<2 && i === 3){
+    const str = `\nSorry! You didn't make it to level 2 😥\nYour score is ${score}`;
+    return chalk.bgWhite.yellowBright(str);
+  }
 }
-if((score === 5 || score===6 || score===7)) {
-  const str = `\nHurray!You have won the quiz..🎉🎉 \nYour score is ${score}`;
-  console.log(chalk.green.blackBright(str));
-}
-if((score >=0 && score<=4)) {
-  const str = `\nSorry! You didn't make it to your win 😥\nYour score is ${score}`;
-  console.log(chalk.bgCyan.yellowBright(str));
-}
+
+};
+
+quiz();
