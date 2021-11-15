@@ -1,4 +1,4 @@
-# cricket-quiz
+# Cricket-Quiz
 It is a cricket quiz with 7 questions.
 
 It has two levels but they are different.
